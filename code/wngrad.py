@@ -15,10 +15,11 @@ import helpers
 
 class WNGrad(torch.optim.Optimizer):
   
-    def __init__(self, params, b = None, lambda_wn=None):
+    def __init__(self, params, b = None, lambda_wn=None, b_sq = False):
 #         if b == None:
 #             raise ValueException('Please provide a b parameter.')
         self.b = b
+        self.b_sq = b_sq
         defaults = dict(lambda_wn=lambda_wn)
         super(WNGrad, self).__init__(params, defaults)
 
@@ -58,7 +59,10 @@ class WNGrad(torch.optim.Optimizer):
                     if param.grad is not None:
                         grad_flat = torch.cat((grad_flat, param.grad.flatten()))
         # Update b with norm of new grad
-        grad_2_norm = grad_flat.pow(2).sum().sqrt()
+        if self.b_sq:
+            grad_2_norm = grad_flat.pow(2).sum()
+        else:
+            grad_2_norm = grad_flat.pow(2).sum().sqrt()
         self.b = self.b + grad_2_norm/self.b
 
         return loss
