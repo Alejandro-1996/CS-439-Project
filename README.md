@@ -10,7 +10,7 @@ In this project we have implemented the algorithm *WNGrad* presented by [Léon B
 
 Furthermore, after realizing that the parameter update proposed by [Léon Bottou et. al.](https://arxiv.org/pdf/1803.02865.pdf) was too big and could truncate learning, we proposed a modification to the update rule, that proved to outperform *WNGrad*, and in some scenarios, a properly tuned *SGD*. 
 
-![SVMwithCD](https://user-images.githubusercontent.com/65513243/122281743-e683d280-ceea-11eb-8145-78c9f9430958.png)
+![SVM](https://user-images.githubusercontent.com/65513243/122281743-e683d280-ceea-11eb-8145-78c9f9430958.png)
 
 The convex and non-convex settings were performed in `Python 3.9`, using `PyTorch 1.8.0` as core library. Experiments were performed on `iPython` notebooks.The Riemannian setting was performed in MatLab 2020b using, the manopt toolbox created and maintained by Boumal et al. 
 
