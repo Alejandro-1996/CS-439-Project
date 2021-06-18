@@ -14,6 +14,6 @@ Furthermore, after realizing that the parameter update proposed by [Léon Bottou
 
 The convex and non-convex settings were performed in `Python 3.9`, using `PyTorch 1.8.0` as core library. Experiments were performed on `iPython` notebooks.The Riemannian setting was performed in MatLab 2020b using, the manopt toolbox created and maintained by Boumal et al. 
 
-To reproduce the experiments for SVM, run [`SVM_experimentation.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/SVM_experimentation.ipynb).
-To reproduce the experiments for neural nets, run [`CIFAR10.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/CIFAR10.ipynb).
+To reproduce the experiments for SVM, run [`code/SVM_experimentation.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/SVM_experimentation.ipynb).
+To reproduce the experiments for neural nets, run [`code/CIFAR10.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/CIFAR10.ipynb).
 To reproduce the experiments in the Riemannian setting, run [`code/rayleighquotient/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/rayleighquotient/main.m) and [`code/robustsubspaceanalysis/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/robustsubspaceanalysis/main.m).
