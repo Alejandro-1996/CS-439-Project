@@ -1,4 +1,7 @@
-% experiment diff_noise_WNRGD
+% this code is based on some code one of the authors previously wrote
+% for an exercise session of MATH 512.
+
+% evaluate WNGrad-mod-p for different values of p
 
 % p=2 seems best over a wide range of noises
 

@@ -1,6 +1,8 @@
+% this code is based on manopt as well as code written by 
+% Nicolas Boumal and one of the authors for Project 2 of MATH 512
+
 % files modified or created to implement our experiments:
 % ./main.m
-% ./noisyhubercost.m
 % ./noisyhubergrad.m
 % ./manopt/manopt/solvers/sgd.m
 % ./manopt/manopt/solvers/wnrgd.m
