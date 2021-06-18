@@ -86,6 +86,9 @@ def calculate_primal_objective(y, A, w, lambda_):
         v = np.maximum(1 - y * (A @ w), 0)
         return np.sum(v) + lambda_ / 2 * np.sum(w ** 2)
         
+def calculate_dual_objective(y, A, w, alpha, lambda_):
+    """calculate the objective for the dual problem."""
+    return np.sum(alpha)  - lambda_ / 2.0 * np.sum(w ** 2) # w = 1/lambda * A * Y * alpha
     
 def SVM_loss(y, A, w, lambda_):
     """compute the full cost (the primal objective), that is loss plus regularizer.
@@ -113,3 +116,21 @@ def compute_gradient_svm(A, y, lambda_, w_t, num_data_points):
     gradient[z >= 1, :] = (0.01 * w_t)
     gradient[z < 1, :] = (np.matlib.repmat(0.01 * w_t, A.shape[0], 1)  - (A*(np.matlib.repmat(y, 300, 1).T)) * num_data_points)[z < 1, :]
     return gradient.mean(axis = 0)
+
+def project_to_box(tensor):
+    return min(max(tensor, 0.0), 1.0)
+
+def calculate_coordinate_update_wngrad(y, A, lambda_, alpha, w, i, stepsize):      
+    # calculate the update of coordinate at index=i.
+    a_i, y_i = A[i], y[i]
+    old_alpha_i = np.copy(alpha[i])
+    
+    gradi = 1 - 1/lambda_*(a_i.T @ a_i)*old_alpha_i \
+            - 1/lambda_*(lambda_ * y_i * a_i.T @ w - (a_i.T @ a_i)*old_alpha_i);
+    b = 1/stepsize
+    alpha[i] = project_to_box(old_alpha_i + stepsize*gradi)
+    b = b + gradi*gradi / b
+    
+    # compute the corresponding update on the primal vector w
+    w += (1.0 / lambda_) * (alpha[i] - old_alpha_i) * y_i * a_i
+    return w, alpha, 1/b
