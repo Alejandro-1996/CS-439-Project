@@ -10,10 +10,9 @@ In this project we have implemented the algorithm *WNGrad* presented by [Léon B
 
 Furthermore, after realizing that the parameter update proposed by [Léon Bottou et. al.](https://arxiv.org/pdf/1803.02865.pdf) was too big and could truncate learning, we proposed a modification to the update rule, that proved to outperform *WNGrad*, and in some scenarios, a properly tuned *SGD*. 
 
-![SVM](https://user-images.githubusercontent.com/65513243/122281743-e683d280-ceea-11eb-8145-78c9f9430958.png)
+![image](https://user-images.githubusercontent.com/65513243/122571189-c3713400-d04c-11eb-9e57-93f20e793792.png)
+
 
 The convex and non-convex settings were performed in `Python 3.9`, using `PyTorch 1.8.0` as core library. Experiments were performed on `iPython` notebooks.The Riemannian setting was performed in MatLab 2020b using, the manopt toolbox created and maintained by Boumal et al. 
 
-To reproduce the experiments for SVM, run [`code/SVM_experimentation.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/SVM_experimentation.ipynb).
-To reproduce the experiments for neural nets, run [`code/CIFAR10.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/CIFAR10.ipynb).
-To reproduce the experiments in the Riemannian setting, run [`code/rayleighquotient/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/rayleighquotient/main.m) and [`code/robustsubspaceanalysis/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/robustsubspaceanalysis/main.m).
+To reproduce the experiments performed in Python (Least Squares, SVM, and a CNN), run [`code/Main.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/Main.ipynb). To reproduce the experiments in the Riemannian setting, run [`code/rayleighquotient/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/rayleighquotient/main.m) and [`code/robustsubspaceanalysis/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/robustsubspaceanalysis/main.m).
