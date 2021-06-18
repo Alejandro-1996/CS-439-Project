@@ -12,6 +12,6 @@ Furthermore, after realizing that the parameter update proposed by [Léon Bottou
 
 ![SVM](https://user-images.githubusercontent.com/65513243/122281743-e683d280-ceea-11eb-8145-78c9f9430958.png)
 
-The convex and non-convex settings were performed in `Python 3.9`, using `PyTorch 1.8.0` as core library. Experiments were performed on `iPython` notebooks.The Riemannian setting was performed in MATLab 2020b using, the manopt toolbox by created and maintained by Boumal et al. 
+The convex and non-convex settings were performed in `Python 3.9`, using `PyTorch 1.8.0` as core library. Experiments were performed on `iPython` notebooks.The Riemannian setting was performed in MatLab 2020b using, the manopt toolbox created and maintained by Boumal et al. 
 
 All the Python code necessary to reproduce the results presented next is found in the file [`Main.ipynb`](https://github.com/Alejandro-1996/CS-439-Project/code/Main.ipynb). The Matlab code is found on [`code/rayleighquotient/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/rayleighquotient/main.m) and [`code/robustsubspaceanalysis/main.m`](https://github.com/Alejandro-1996/CS-439-Project/code/robustsubspaceanalysis/main.m).
